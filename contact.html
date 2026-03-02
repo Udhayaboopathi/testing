@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Alex Morgan</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <span class="logo">Alex Morgan</span>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <!-- CONTACT -->
+    <section>
+        <h2>Get in Touch</h2>
+        <div class="divider"></div>
+        <p class="section-sub">Have a project in mind, a question, or just want to say hello? I'd love to hear from you.
+        </p>
+
+        <div class="contact-grid">
+
+            <!-- Info -->
+            <div class="contact-info">
+                <h3>Let's connect</h3>
+                <p>I'm currently open to freelance projects and full-time opportunities. Response time is typically
+                    within 24 hours.</p>
+
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <span>alex.morgan@example.com</span>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <span>San Francisco, CA (Remote-friendly)</span>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">💼</div>
+                    <a href="#">linkedin.com/in/alexmorgan</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">🐙</div>
+                    <a href="#">github.com/alexmorgan</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">🐦</div>
+                    <a href="#">@alexmorgan_dev</a>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form onsubmit="handleSubmit(event)">
+                <div>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+                </div>
+
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+                </div>
+
+                <div>
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Project enquiry" required />
+                </div>
+
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your project or question..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%;">Send Message ✉️</button>
+
+                <p id="form-status" style="display:none; color:#16a34a; font-weight:600; text-align:center;"></p>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Alex Morgan · Built with plain HTML &amp; CSS</p>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            const status = document.getElementById('form-status');
+            status.textContent = '✅ Thanks! Your message has been sent. I\'ll get back to you soon.';
+            status.style.display = 'block';
+            e.target.reset();
+            setTimeout(() => { status.style.display = 'none'; }, 5000);
+        }
+    </script>
+
+</body>
+
+</html>
